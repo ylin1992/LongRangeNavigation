@@ -1,0 +1,62 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\ewan\\source\\repos\\AegisLongRangeNavigation\\AegisLongRangeNavigationSimplified\\AegisLongRangeNavigationSimplified.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\ewan\\source\\repos\\AegisLongRangeNavigation\\AegisLongRangeNavigationSimplified\\AegisLongRangeNavigationSimplified.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ewan\\source\\repos\\AegisLongRangeNavigation\\AegisLongRangeNavigationSimplified\\AegisLongRangeNavigationSimplified.csproj",
+        "projectName": "AegisLongRangeNavigationSimplified",
+        "projectPath": "C:\\Users\\ewan\\source\\repos\\AegisLongRangeNavigation\\AegisLongRangeNavigationSimplified\\AegisLongRangeNavigationSimplified.csproj",
+        "packagesPath": "C:\\Users\\ewan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ewan\\source\\repos\\AegisLongRangeNavigation\\AegisLongRangeNavigationSimplified\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ewan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "targetAlias": "net4.7.2",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "targetAlias": "net4.7.2",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win7-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

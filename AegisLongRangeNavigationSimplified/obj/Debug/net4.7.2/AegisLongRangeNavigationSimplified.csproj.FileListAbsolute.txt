@@ -1,0 +1,12 @@
+C:\Users\ewan\source\repos\AegisLongRangeNavigation\AegisLongRangeNavigationSimplified\obj\Debug\net4.7.2\AegisLongRangeNavigationSimplified.csproj.AssemblyReference.cache
+C:\Users\ewan\source\repos\AegisLongRangeNavigation\AegisLongRangeNavigationSimplified\obj\Debug\net4.7.2\AegisLongRangeNavigationSimplified.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ewan\source\repos\AegisLongRangeNavigation\AegisLongRangeNavigationSimplified\obj\Debug\net4.7.2\AegisLongRangeNavigationSimplified.AssemblyInfoInputs.cache
+C:\Users\ewan\source\repos\AegisLongRangeNavigation\AegisLongRangeNavigationSimplified\obj\Debug\net4.7.2\AegisLongRangeNavigationSimplified.AssemblyInfo.cs
+C:\Users\ewan\source\repos\AegisLongRangeNavigation\AegisLongRangeNavigationSimplified\obj\Debug\net4.7.2\AegisLongRangeNavigationSimplified.csproj.CoreCompileInputs.cache
+C:\Users\ewan\source\repos\AegisLongRangeNavigation\AegisLongRangeNavigationSimplified\bin\Debug\net4.7.2\AegisLongRangeNavigationSimplified.exe.config
+C:\Users\ewan\source\repos\AegisLongRangeNavigation\AegisLongRangeNavigationSimplified\bin\Debug\net4.7.2\AegisLongRangeNavigationSimplified.exe
+C:\Users\ewan\source\repos\AegisLongRangeNavigation\AegisLongRangeNavigationSimplified\bin\Debug\net4.7.2\AegisLongRangeNavigationSimplified.pdb
+C:\Users\ewan\source\repos\AegisLongRangeNavigation\AegisLongRangeNavigationSimplified\bin\Debug\net4.7.2\Newtonsoft.Json.dll
+C:\Users\ewan\source\repos\AegisLongRangeNavigation\AegisLongRangeNavigationSimplified\obj\Debug\net4.7.2\AegisLongRangeNavigationSimplified.csproj.CopyComplete
+C:\Users\ewan\source\repos\AegisLongRangeNavigation\AegisLongRangeNavigationSimplified\obj\Debug\net4.7.2\AegisLongRangeNavigationSimplified.exe
+C:\Users\ewan\source\repos\AegisLongRangeNavigation\AegisLongRangeNavigationSimplified\obj\Debug\net4.7.2\AegisLongRangeNavigationSimplified.pdb
