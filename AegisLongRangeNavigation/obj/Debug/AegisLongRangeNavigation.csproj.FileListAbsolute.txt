@@ -1,0 +1,10 @@
+C:\Users\ewan\source\repos\AegisLongRangeNavigation\AegisLongRangeNavigation\obj\Debug\AegisLongRangeNavigation.csproj.AssemblyReference.cache
+C:\Users\ewan\source\repos\AegisLongRangeNavigation\AegisLongRangeNavigation\obj\Debug\AegisLongRangeNavigation.csproj.CoreCompileInputs.cache
+C:\Users\ewan\source\repos\AegisLongRangeNavigation\AegisLongRangeNavigation\bin\Debug\AegisLongRangeNavigation.exe.config
+C:\Users\ewan\source\repos\AegisLongRangeNavigation\AegisLongRangeNavigation\bin\Debug\AegisLongRangeNavigation.exe
+C:\Users\ewan\source\repos\AegisLongRangeNavigation\AegisLongRangeNavigation\bin\Debug\AegisLongRangeNavigation.pdb
+C:\Users\ewan\source\repos\AegisLongRangeNavigation\AegisLongRangeNavigation\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ewan\source\repos\AegisLongRangeNavigation\AegisLongRangeNavigation\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ewan\source\repos\AegisLongRangeNavigation\AegisLongRangeNavigation\obj\Debug\AegisLongRangeNavigation.csproj.CopyComplete
+C:\Users\ewan\source\repos\AegisLongRangeNavigation\AegisLongRangeNavigation\obj\Debug\AegisLongRangeNavigation.exe
+C:\Users\ewan\source\repos\AegisLongRangeNavigation\AegisLongRangeNavigation\obj\Debug\AegisLongRangeNavigation.pdb
