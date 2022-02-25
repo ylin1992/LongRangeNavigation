@@ -4,20 +4,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AegisLongRangeNavigationSimplified
+namespace AegisLongRangeNavigationSimplified.Vertices
 {
-    public class Vertex3D
+    public class Vertex3D : CoordinateBasedVertex, IHeuristicBasedVertex
     {
 		public int Index { get; }
-		public double[] Coordinates { get; }
+		public double[] Coordinates { get; private set; }
 		public double Distance { get; set; }
-		public Vertex3D(int index, double[] coord)
+		public Vertex3D(int index, double[] coord) : base(index, coord)
 		{
-			Distance = 0.0;
-			Coordinates = coord;
 			Index = index;
+			Coordinates = coord;
+		}
+		public static Vertex3D CreateVertex(int index, double[] coord)
+		{
+			if (coord == null || coord.Length != 3)
+			{
+				return null;
+			}
+
+			return new Vertex3D(index, coord);
 		}
 
+		public override bool UpdateCoordinate(double[] coord)
+		{
+			if (coord != null && coord.Length == 3)
+			{
+				Coordinates = coord;
+				return true;
+			}
+			return false;
+		}
 		public double GetHeuristicPara(double[] target)
 		{
 			return Math.Pow(Math.Pow(target[0] - Coordinates[0], 2)

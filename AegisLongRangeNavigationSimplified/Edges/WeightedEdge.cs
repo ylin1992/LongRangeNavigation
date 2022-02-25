@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AegisLongRangeNavigationSimplified.Vertices;
 
-namespace AegisLongRangeNavigationSimplified
+namespace AegisLongRangeNavigationSimplified.Edges
 {
     public class WeightedEdge
     {

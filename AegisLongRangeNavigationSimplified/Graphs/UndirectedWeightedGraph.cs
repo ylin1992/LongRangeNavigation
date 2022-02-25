@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AegisLongRangeNavigationSimplified.Edges;
+using AegisLongRangeNavigationSimplified.Vertices;
 
-namespace AegisLongRangeNavigationSimplified
+namespace AegisLongRangeNavigationSimplified.Graphs
 {
     public class UndirectedWeightedGraph
     {
-		public Dictionary<Vertex3D, List<WeightedEdge>> Table { get; }
+        public Dictionary<Vertex3D, List<WeightedEdge>> Table { get; }
 		public bool IsDirected { get; }
 		public UndirectedWeightedGraph()
 		{

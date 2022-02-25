@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.IO;
-
+using AegisLongRangeNavigationSimplified.Graphs;
+using AegisLongRangeNavigationSimplified.Vertices;
 namespace AegisLongRangeNavigationSimplified.Parsers
 {
 	public class JSONParser
