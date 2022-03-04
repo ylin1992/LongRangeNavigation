@@ -7,12 +7,12 @@ using AegisLongRangeNavigationSimplified.Vertices;
 
 namespace AegisLongRangeNavigationSimplified.Edges
 {
-    public class WeightedEdge
+    public class WeightedEdge<TVertex> : Edge<TVertex>, IPositiveWeighted<TVertex>
     {
-        public Vertex3D From { get; }
-        public Vertex3D To { get; }
+        public TVertex From { get; }
+        public TVertex To { get; }
         public double Weight { get; set; }
-        public WeightedEdge(Vertex3D f, Vertex3D t, double w)
+        public WeightedEdge(TVertex f, TVertex t, double w) : base(f, t)
         {
             From = f;
             To = t;
@@ -25,5 +25,11 @@ namespace AegisLongRangeNavigationSimplified.Edges
             return From.ToString() + "-- " + Weight + " -->" + To.ToString();
         }
 
+        public bool UpdateWeight(double w)
+        {
+            if (w <= 0) return false;
+            Weight = w;
+            return true;
+        }
     }
 }

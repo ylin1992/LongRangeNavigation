@@ -8,44 +8,75 @@ using AegisLongRangeNavigationSimplified.Vertices;
 
 namespace AegisLongRangeNavigationSimplified.Graphs
 {
-    public class UndirectedWeightedGraph
+    public class UndirectedWeightedGraph<TVertex, TEdge> : Graph<TVertex, WeightedEdge<TVertex>>, IAdjacentListGraph<TVertex, WeightedEdge<TVertex>> where TVertex : Vertex
     {
-        public Dictionary<Vertex3D, List<WeightedEdge>> Table { get; }
-		public bool IsDirected { get; }
-		public UndirectedWeightedGraph()
-		{
-			IsDirected = false;
-			Table = new Dictionary<Vertex3D, List<WeightedEdge>>();
-		}
+        public bool IsDirected { get; private set; }
+        public Dictionary<TVertex, List<WeightedEdge<TVertex>>> AdjacentList { get; set; }
+        public UndirectedWeightedGraph()
+        {
+            IsDirected = false;
+            VerticesList = new Dictionary<int, TVertex>();
+            AdjacentList = new Dictionary<TVertex, List<WeightedEdge<TVertex>>>();
+        }
 
-		public UndirectedWeightedGraph(List<WeightedEdge> edges)
-		{
-			// TODO: Implement adding edges by List of TEdge
-		}
+        public override bool AddEdge(WeightedEdge<TVertex> edge)
+        {
+            if (edge != null)
+            {
+                TVertex from = edge.From;
+                if (!AdjacentList.ContainsKey(from))
+                {
+                    AdjacentList.Add(from, new List<WeightedEdge<TVertex>>());
+                }
+                AdjacentList[from].Add(edge);
 
-		public void AddEdge(Vertex3D f, Vertex3D t, double weight)
-		{
-			if (!Table.ContainsKey(f))
-			{
-				Table.Add(f, new List<WeightedEdge>());
-			}
-			Table[f].Add(new WeightedEdge(f, t, weight));
-		}
+                if (!VerticesList.ContainsKey(from.Index))
+                {
+                    VerticesList[from.Index] = from;
+                }
+                if (!VerticesList.ContainsKey(edge.To.Index))
+                {
+                    VerticesList[edge.To.Index] = edge.To;
+                }
 
-		public override string ToString()
-		{
-			string res = "";
-			foreach (KeyValuePair<Vertex3D, List<WeightedEdge>> set in Table)
-			{
-				//res += set.Key;
-				foreach (WeightedEdge edge in set.Value)
-				{
-					res += edge;
-					res += "\n";
-				}
-				//res += "\n";
-			}
-			return res;
-		}
-	}
+                return true;
+            }
+            else 
+            {
+                return false; 
+            }
+        }
+
+        public override string ToString()
+        {
+            string res = "";
+            foreach (KeyValuePair<TVertex, List<WeightedEdge<TVertex>>> set in AdjacentList)
+            {
+                //res += set.Key;
+                foreach (WeightedEdge<TVertex> edge in set.Value)
+                {
+                    res += edge;
+                    res += "\n";
+                }
+                //res += "\n";
+            }
+            return res;
+        }
+
+        // TODO: build another dictionary storing reverse-searching data
+        public override TVertex GetVertexByIndex(int idx)
+        {
+            foreach (TVertex v in AdjacentList.Keys)
+            {
+                if (v.Index == idx) return v;
+            }
+            return null;
+        }
+
+        public override int GetVerticesCount()
+        {
+            if (AdjacentList == null) return 0;
+            return AdjacentList.Count;
+        }
+    }
 }

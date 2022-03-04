@@ -6,15 +6,24 @@ using System.Threading.Tasks;
 
 namespace AegisLongRangeNavigationSimplified.Vertices
 {
-    public class Vertex
+    public abstract class Vertex : IHeuristicBasedVertex
     {
         public int Index { get; set; }
         public double Distance { get; set; }
         public Vertex(int index)
         {
-            Distance = 0.0;
+            Distance = float.MaxValue;
             Index = index;
         }
+
+        public virtual bool DecreaseKey(int newDistance) 
+        {
+            if (newDistance > Distance) return false;
+            Distance = newDistance;
+            return true;
+        }
+
+        public abstract double GetHeuristicPara(double[] target);
 
     }
 }

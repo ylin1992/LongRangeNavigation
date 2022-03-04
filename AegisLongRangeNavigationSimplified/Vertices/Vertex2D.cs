@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace AegisLongRangeNavigationSimplified.Vertices
 {
-    public class Vertex2D : CoordinateBasedVertex, ICoordinateBasedVertex
+    public class Vertex2D : CoordinateBasedHeuristicVertex, ICoordinateBasedVertex
     {
         public double[] Coordinates { get; private set; }
+        public List<Vertex2D> Neighbors { get; set; }
         private Vertex2D(int index, double[] coord) : base(index, coord)
         {
             Index = index;
             Coordinates = coord;
+            Neighbors = new List<Vertex2D>();
         }
 
         // Vertex Factory

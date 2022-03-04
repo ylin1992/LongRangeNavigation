@@ -6,15 +6,17 @@ using System.Threading.Tasks;
 
 namespace AegisLongRangeNavigationSimplified.Vertices
 {
-    public class Vertex3D : CoordinateBasedVertex, IHeuristicBasedVertex
+    public class Vertex3D : CoordinateBasedHeuristicVertex
     {
 		public int Index { get; }
 		public double[] Coordinates { get; private set; }
 		public double Distance { get; set; }
+		
 		public Vertex3D(int index, double[] coord) : base(index, coord)
 		{
 			Index = index;
 			Coordinates = coord;
+			Distance = float.MaxValue;
 		}
 		public static Vertex3D CreateVertex(int index, double[] coord)
 		{
@@ -35,11 +37,10 @@ namespace AegisLongRangeNavigationSimplified.Vertices
 			}
 			return false;
 		}
-		public double GetHeuristicPara(double[] target)
+		public override double GetHeuristicPara(double[] target)
 		{
 			return Math.Pow(Math.Pow(target[0] - Coordinates[0], 2)
-				+ Math.Pow(target[1] - Coordinates[1], 2)
-				+ Math.Pow(target[2] - Coordinates[2], 2), 0.5);
+				+ Math.Pow(target[1] - Coordinates[1], 2), 0.5); // ignore z axis
 		}
 
 		public override string ToString()

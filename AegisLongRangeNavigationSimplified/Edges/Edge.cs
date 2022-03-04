@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AegisLongRangeNavigationSimplified.Edges
 {
-    class Edge<TVertex>
+    public class Edge<TVertex>
     {
         public TVertex From { get; }
         public TVertex To { get; }
