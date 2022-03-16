@@ -13,8 +13,11 @@ namespace AegisLongRangeNavigationSimplified.Graphs
     public class UndirectedWeightedGraph<TVertex, TEdge> : Graph<TVertex, WeightedEdge<TVertex>>, 
         IHumanModelGraph, IAdjacentListGraph<TVertex, WeightedEdge<TVertex>> where TVertex : Vertex
     {
+        private static int KDTREE_DIMENSION = 2;
         public static double ANGLE_THRESHOLD = 40.0;
         public bool IsDirected { get; private set; }
+
+        private KDTree<double, TVertex> tree;
         public Dictionary<TVertex, List<WeightedEdge<TVertex>>> AdjacentList { get; set; }
         public UndirectedWeightedGraph()
         {
@@ -125,7 +128,24 @@ namespace AegisLongRangeNavigationSimplified.Graphs
 
         public override TVertex GetNearestNeighbor(double[] target)
         {
-            throw new NotImplementedException();
+            if (target == null || target.Length != KDTREE_DIMENSION)
+                throw new ArgumentException("target.Length should be equal to " + KDTREE_DIMENSION.ToString());
+            if (tree == null || tree.Count != AdjacentList.Count)
+                createKDTree();
+            return tree.GetNearestNeighbor(target).Value;
+        }
+
+        private void createKDTree()
+        {
+            tree = new KDTree<double, TVertex>(KDTREE_DIMENSION, new DoubleOperable());
+            foreach (KeyValuePair<TVertex, List<WeightedEdge<TVertex>>> keyValuePair in AdjacentList)
+            {
+                TVertex v = keyValuePair.Key;
+                double[] coord = { v.Coordinates[0], v.Coordinates[1] };
+                KDNode<double, TVertex> node = new KDNode<double, TVertex>(
+                    new Tuple<List<double>, TVertex>(new List<double>(coord), v));
+                tree.Insert(node);
+            }
         }
     }
 }

@@ -75,9 +75,13 @@ namespace AegisLongRangeNavigationSimplified
             File.WriteAllText("markers.json", json);
 
             // Test adjusting weight
-            udwGraph.ApplyHumanModel(6, -3.5, 0.05);
-            parser.WriteGraphToJsons("./dtmE_Adj.json", "./dtmV_Adj.json", udwGraph);
+            //udwGraph.ApplyHumanModel(6, -3.5, 0.05);
+            //parser.WriteGraphToJsons("./dtmE_Adj.json", "./dtmV_Adj.json", udwGraph);
 
+
+            // Test finding the closest points
+            Vertex3D v1 = udwGraph.GetNearestNeighbor(new double[] { 0.005, 0.024});
+            Console.WriteLine(v1);
 
             // Testing Vertex3D with KDTreeLib
             Vertex3D[] vertex3Ds = new Vertex3D[] {
