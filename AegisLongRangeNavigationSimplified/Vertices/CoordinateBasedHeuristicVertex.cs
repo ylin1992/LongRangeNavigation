@@ -8,7 +8,7 @@ namespace AegisLongRangeNavigationSimplified.Vertices
 {
     public class CoordinateBasedHeuristicVertex : Vertex, ICoordinateBasedVertex
     {
-        public double[] Coordinates { get; private set; }
+        public override double[] Coordinates { get;  set; }
         public CoordinateBasedHeuristicVertex(int index, double[] coord) : base(index)
         {
             Coordinates = coord;

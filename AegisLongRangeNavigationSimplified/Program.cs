@@ -3,12 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using Newtonsoft.Json;
 
 using AegisLongRangeNavigationSimplified.Parsers;
 using AegisLongRangeNavigationSimplified.Graphs;
 using AegisLongRangeNavigationSimplified.Edges;
 using AegisLongRangeNavigationSimplified.Vertices;
+
+using AegisLongRangeNavigationKDTreeLib.AegisKDTree;
+using AegisLongRangeNavigationKDTreeLib.AegisKDTree.TreeType;
+
 
 namespace AegisLongRangeNavigationSimplified
 {
@@ -25,7 +30,7 @@ namespace AegisLongRangeNavigationSimplified
 
             // Waypoint testing
             Console.WriteLine("==========WayPoints Testing=========");
-            int[] wayPoints = new int[] {0, 459, 100, 200, 500, 700, 1500, 1593, 900, 2000, 1200, 1467, 1587, 1763, 1862, 2007};
+            int[] wayPoints = new int[] {0, 1500};
             for (int i = 0; i < wayPoints.Length - 1; i++)
             {
                 Vertex3D s = udwGraph.GetVertexByIndex(wayPoints[i]);
@@ -68,6 +73,36 @@ namespace AegisLongRangeNavigationSimplified
             string json = JsonConvert.SerializeObject(data, Formatting.Indented);
             //Console.WriteLine(json);
             File.WriteAllText("markers.json", json);
+
+            // Test adjusting weight
+            udwGraph.ApplyHumanModel(6, -3.5, 0.05);
+            parser.WriteGraphToJsons("./dtmE_Adj.json", "./dtmV_Adj.json", udwGraph);
+
+
+            // Testing Vertex3D with KDTreeLib
+            Vertex3D[] vertex3Ds = new Vertex3D[] {
+                new Vertex3D(0, new double[] { 1,2, 3}),
+                new Vertex3D(1, new double[] { 2,3,8}),
+                new Vertex3D(2, new double[] { 1,8,111}),
+                new Vertex3D(3, new double[] { 7,5,10}),
+                new Vertex3D(4, new double[] { 11,4,-2}),
+            };
+
+            KDTree<double, Vertex3D> tree = new KDTree<double, Vertex3D>(2, new DoubleOperable());
+            foreach (Vertex3D v in vertex3Ds)
+            {
+                double[] coord = new double[] { v.Coordinates[0], v.Coordinates[1] };
+                KDNode<double, Vertex3D> n = new KDNode<double, Vertex3D>(
+                    new Tuple<List<double>, Vertex3D>(new List<double>(coord), v));
+                tree.Insert(n);
+            }
+            Console.WriteLine(tree.Count);
+            KDNode<double, Vertex3D> n1 = tree.GetNearestNeighbor(new double[] { 1, 2});
+            KDNode<double, Vertex3D> n2 = tree.GetNearestNeighbor(new double[] { 2, 2 });
+            KDNode<double, Vertex3D> n3 = tree.GetNearestNeighbor(new double[] { 1, 7 });
+            Console.WriteLine(n1);
+            Console.WriteLine(n2);
+            Console.WriteLine(n3);
         }
     }
 }

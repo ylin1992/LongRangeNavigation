@@ -27,5 +27,7 @@ namespace AegisLongRangeNavigationSimplified.Graphs
         }
 
         public abstract TVertex GetVertexByIndex(int idx);
+
+        public abstract TVertex GetNearestNeighbor(double[] target);
     }
 }

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "/QF3wbutGjlUC+0LoxNh/w70fbLabA1JsCNJkteNB6Skk6/9p2NS5hgqWit+PB21qWGetfu940wEpJERF1x9CA==",
+  "dgSpecHash": "102ZgISEdGmV8/Swy20+qpFAFgXv3xhzJX/MrIHnh6Dy3KNp+qnICdDqQVkuxPrWEOYaYCUZgHNK0IooQEZoLA==",
   "success": true,
-  "projectFilePath": "C:\\Project\\AegisLongRangeNavigation\\AegisLongRangeNavigationSimplified\\AegisLongRangeNavigationSimplified.csproj",
+  "projectFilePath": "E:\\Project\\AegisLongRangeNavigation\\AegisLongRangeNavigationSimplified\\AegisLongRangeNavigationSimplified.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\PS Donation\\.nuget\\packages\\kdtree\\1.4.1\\kdtree.1.4.1.nupkg.sha512",
     "C:\\Users\\PS Donation\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\PS Donation\\.nuget\\packages\\optimizedpriorityqueue\\5.1.0\\optimizedpriorityqueue.5.1.0.nupkg.sha512",
     "C:\\Users\\PS Donation\\.nuget\\packages\\system.io\\4.3.0\\system.io.4.3.0.nupkg.sha512",

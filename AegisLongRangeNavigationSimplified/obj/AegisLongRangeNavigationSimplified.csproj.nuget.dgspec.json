@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Project\\AegisLongRangeNavigation\\AegisLongRangeNavigationSimplified\\AegisLongRangeNavigationSimplified.csproj": {}
+    "E:\\Project\\AegisLongRangeNavigation\\AegisLongRangeNavigationSimplified\\AegisLongRangeNavigationSimplified.csproj": {}
   },
   "projects": {
-    "C:\\Project\\AegisLongRangeNavigation\\AegisLongRangeNavigationSimplified\\AegisLongRangeNavigationSimplified.csproj": {
+    "E:\\Project\\AegisLongRangeNavigation\\AegisLongRangeNavigationSimplified\\AegisLongRangeNavigationSimplified.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Project\\AegisLongRangeNavigation\\AegisLongRangeNavigationSimplified\\AegisLongRangeNavigationSimplified.csproj",
+        "projectUniqueName": "E:\\Project\\AegisLongRangeNavigation\\AegisLongRangeNavigationSimplified\\AegisLongRangeNavigationSimplified.csproj",
         "projectName": "AegisLongRangeNavigationSimplified",
-        "projectPath": "C:\\Project\\AegisLongRangeNavigation\\AegisLongRangeNavigationSimplified\\AegisLongRangeNavigationSimplified.csproj",
+        "projectPath": "E:\\Project\\AegisLongRangeNavigation\\AegisLongRangeNavigationSimplified\\AegisLongRangeNavigationSimplified.csproj",
         "packagesPath": "C:\\Users\\PS Donation\\.nuget\\packages\\",
-        "outputPath": "C:\\Project\\AegisLongRangeNavigation\\AegisLongRangeNavigationSimplified\\obj\\",
+        "outputPath": "E:\\Project\\AegisLongRangeNavigation\\AegisLongRangeNavigationSimplified\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -31,7 +31,11 @@
         "frameworks": {
           "net472": {
             "targetAlias": "net472",
-            "projectReferences": {}
+            "projectReferences": {
+              "E:\\Project\\AegisLongRangeNavigation\\AegisLongRangeNavigation\\AegisLongRangeNavigation.csproj": {
+                "projectPath": "E:\\Project\\AegisLongRangeNavigation\\AegisLongRangeNavigation\\AegisLongRangeNavigation.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -44,6 +48,10 @@
         "net472": {
           "targetAlias": "net472",
           "dependencies": {
+            "KdTree": {
+              "target": "Package",
+              "version": "[1.4.1, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.1, )"
@@ -57,13 +65,28 @@
               "version": "[4.3.4, )"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
         "win7-x64": {
           "#import": []
         }
+      }
+    },
+    "E:\\Project\\AegisLongRangeNavigation\\AegisLongRangeNavigation\\AegisLongRangeNavigation.csproj": {
+      "restore": {
+        "projectUniqueName": "E:\\Project\\AegisLongRangeNavigation\\AegisLongRangeNavigation\\AegisLongRangeNavigation.csproj",
+        "projectName": "AegisLongRangeNavigation",
+        "projectPath": "E:\\Project\\AegisLongRangeNavigation\\AegisLongRangeNavigation\\AegisLongRangeNavigation.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
       }
     }
   }

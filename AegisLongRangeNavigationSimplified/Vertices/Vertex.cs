@@ -10,10 +10,12 @@ namespace AegisLongRangeNavigationSimplified.Vertices
     {
         public int Index { get; set; }
         public double Distance { get; set; }
+        public virtual double[] Coordinates { get; set; }
         public Vertex(int index)
         {
             Distance = float.MaxValue;
             Index = index;
+            Coordinates = new double[2];
         }
 
         public virtual bool DecreaseKey(int newDistance) 

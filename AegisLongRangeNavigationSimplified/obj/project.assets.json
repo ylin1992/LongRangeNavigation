@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     ".NETFramework,Version=v4.7.2": {
+      "KdTree/1.4.1": {
+        "type": "package",
+        "compile": {
+          "lib/net471/KdTreeLib.dll": {}
+        },
+        "runtime": {
+          "lib/net471/KdTreeLib.dll": {}
+        }
+      },
       "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
@@ -170,9 +179,27 @@
             "rid": "win"
           }
         }
+      },
+      "AegisLongRangeNavigation/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/AegisLongRangeNavigation.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AegisLongRangeNavigation.dll": {}
+        }
       }
     },
     ".NETFramework,Version=v4.7.2/win7-x64": {
+      "KdTree/1.4.1": {
+        "type": "package",
+        "compile": {
+          "lib/net471/KdTreeLib.dll": {}
+        },
+        "runtime": {
+          "lib/net471/KdTreeLib.dll": {}
+        }
+      },
       "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
@@ -297,10 +324,40 @@
         "runtime": {
           "runtimes/win/lib/net461/System.Security.Cryptography.X509Certificates.dll": {}
         }
+      },
+      "AegisLongRangeNavigation/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/AegisLongRangeNavigation.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AegisLongRangeNavigation.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "KdTree/1.4.1": {
+      "sha512": "yWbb35v/V9y88SLLMUPTlAN3pQEoPhDfZf9PApFnlU4kLtwVQ75U9vW5mW4/alQnLBuLKWBKcy4W5xK95mYsuA==",
+      "type": "package",
+      "path": "kdtree/1.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "kdtree.1.4.1.nupkg.sha512",
+        "kdtree.nuspec",
+        "lib/net45/KdTreeLib.dll",
+        "lib/net451/KdTreeLib.dll",
+        "lib/net452/KdTreeLib.dll",
+        "lib/net46/KdTreeLib.dll",
+        "lib/net461/KdTreeLib.dll",
+        "lib/net462/KdTreeLib.dll",
+        "lib/net47/KdTreeLib.dll",
+        "lib/net471/KdTreeLib.dll",
+        "lib/netcoreapp2.0/KdTreeLib.dll",
+        "lib/netstandard2.0/KdTreeLib.dll"
+      ]
+    },
     "Newtonsoft.Json/13.0.1": {
       "sha512": "ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
       "type": "package",
@@ -738,10 +795,17 @@
         "system.security.cryptography.x509certificates.4.3.0.nupkg.sha512",
         "system.security.cryptography.x509certificates.nuspec"
       ]
+    },
+    "AegisLongRangeNavigation/1.0.0": {
+      "type": "project",
+      "path": "../AegisLongRangeNavigation/AegisLongRangeNavigation.csproj",
+      "msbuildProject": "../AegisLongRangeNavigation/AegisLongRangeNavigation.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7.2": [
+      "AegisLongRangeNavigation >= 1.0.0",
+      "KdTree >= 1.4.1",
       "Newtonsoft.Json >= 13.0.1",
       "OptimizedPriorityQueue >= 5.1.0",
       "System.Net.Http >= 4.3.4"
@@ -754,11 +818,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Project\\AegisLongRangeNavigation\\AegisLongRangeNavigationSimplified\\AegisLongRangeNavigationSimplified.csproj",
+      "projectUniqueName": "E:\\Project\\AegisLongRangeNavigation\\AegisLongRangeNavigationSimplified\\AegisLongRangeNavigationSimplified.csproj",
       "projectName": "AegisLongRangeNavigationSimplified",
-      "projectPath": "C:\\Project\\AegisLongRangeNavigation\\AegisLongRangeNavigationSimplified\\AegisLongRangeNavigationSimplified.csproj",
+      "projectPath": "E:\\Project\\AegisLongRangeNavigation\\AegisLongRangeNavigationSimplified\\AegisLongRangeNavigationSimplified.csproj",
       "packagesPath": "C:\\Users\\PS Donation\\.nuget\\packages\\",
-      "outputPath": "C:\\Project\\AegisLongRangeNavigation\\AegisLongRangeNavigationSimplified\\obj\\",
+      "outputPath": "E:\\Project\\AegisLongRangeNavigation\\AegisLongRangeNavigationSimplified\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -778,7 +842,11 @@
       "frameworks": {
         "net472": {
           "targetAlias": "net472",
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\Project\\AegisLongRangeNavigation\\AegisLongRangeNavigation\\AegisLongRangeNavigation.csproj": {
+              "projectPath": "E:\\Project\\AegisLongRangeNavigation\\AegisLongRangeNavigation\\AegisLongRangeNavigation.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -791,6 +859,10 @@
       "net472": {
         "targetAlias": "net472",
         "dependencies": {
+          "KdTree": {
+            "target": "Package",
+            "version": "[1.4.1, )"
+          },
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[13.0.1, )"
@@ -804,7 +876,7 @@
             "version": "[4.3.4, )"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

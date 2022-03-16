@@ -13,6 +13,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="KdTree" Version="1.4.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="OptimizedPriorityQueue" Version="5.1.0" />
     <PackageReference Include="System.Net.Http" Version="4.3.4" />
@@ -20,6 +21,17 @@
 
   <ItemGroup>
     <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AegisLongRangeNavigation\AegisLongRangeNavigation.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="AegisLongRangeNavigationKDTreeLib">
+      <HintPath>C:\Users\PS Donation\source\repos\AegisLongRangeNavigationKDTree\AegisLongRangeNavigationKDTreeLib\bin\Debug\netstandard2.0\AegisLongRangeNavigationKDTreeLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
   </ItemGroup>
 
 </Project>

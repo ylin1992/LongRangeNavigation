@@ -17,7 +17,7 @@ namespace AegisLongRangeNavigationSimplified.Parsers
 		 * graphData should not be null
 		 */
 
-		
+
 		private string _vertexFile;
 		private string _edgeFile;
 		private List<VertexData> _vertexDatas;
@@ -76,6 +76,26 @@ namespace AegisLongRangeNavigationSimplified.Parsers
 			return graph;
 		}
 
+		public void WriteGraphToJsons(string edgeFile, string vertexFile, UndirectedWeightedGraph<Vertex3D, WeightedEdge<Vertex3D>> graph)
+		{
+			Dictionary<Vertex3D, List<WeightedEdge<Vertex3D>>> adjaceneyList = graph.AdjacentList;
+			List<VertexData> vs = new List<VertexData>();
+			List<EdgeData> es = new List<EdgeData>();
+			foreach (KeyValuePair<Vertex3D, List<WeightedEdge<Vertex3D>>> pair in adjaceneyList)
+			{
+				Vertex3D v = pair.Key;
+				vs.Add(new VertexData { Index = v.Index, X = v.Coordinates[0], Y = v.Coordinates[1], Z = v.Coordinates[2] });
+				foreach (WeightedEdge<Vertex3D> e in pair.Value)
+				{
+					es.Add(new EdgeData { From=e.From.Index, To=e.To.Index, Weight=e.Weight});
+				}
+			}
+
+			string vJson = JsonConvert.SerializeObject(vs.ToArray());
+			string eJson = JsonConvert.SerializeObject(es.ToArray());
+			System.IO.File.WriteAllText(vertexFile, vJson);
+			System.IO.File.WriteAllText(edgeFile, eJson);
+		}
 	}
 
 	public class VertexData
